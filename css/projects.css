@@ -104,30 +104,6 @@ body {
     margin-bottom: 10px;
 }
 
-.description-bar {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-size: 0.9em;
-    width: 100%;
-    box-sizing: border-box;
-    border-radius: 25px;
-    margin-top: auto;
-}
-
-.description-bar a {
-    color: #009688;
-    text-decoration: none;
-}
-
-.description-bar a:hover {
-    text-decoration: underline;
-}
 
 @keyframes fadeIn {
     from { opacity: 0; }
