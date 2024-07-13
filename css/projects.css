@@ -1,0 +1,256 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Premium black background */
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+.navbar {
+    width: 90%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideDown 1s ease-out;
+    position: relative;
+}
+
+.logo {
+    width: 300px;
+    height: 110px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.nav-links li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #daa520;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+.navbar-menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.clients-title {
+    color: #daa520; /* Royal golden color */
+    text-align: center;
+    margin-top: 20px;
+    font-size: 2em;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 10px;
+    padding: 20px;
+    height: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+.column {
+    border: 2px solid #FFD700; /* Royal golden border */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.column img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.description-bar {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 25px;
+    margin-top: auto;
+}
+
+.description-bar a {
+    color: #009688;
+    text-decoration: none;
+}
+
+.description-bar a:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-100%); }
+    to { transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
+    }
+    
+    .content h1 {
+        font-size: 50px;
+    }
+
+    .content p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .logo {
+        width: 200px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .content h1 {
+        font-size: 40px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    button {
+        width: 150px;
+        padding: 10px 0;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        height: 80vh;
+        background: rgba(1, 1, 1, 0.8);
+        position: fixed;
+        top: 0;
+        right: 0;
+        transition: transform 0.8s ease-in-out;
+        transform: translateX(100%);
+        padding-top: 80px;
+    }
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .navbar-menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Reduced the margin */
+    }
+
+    .content h1 {
+        font-size: 30px;
+    }
+
+    .content p {
+        font-size: 12px;
+    }
+
+    button {
+        width: 120px;
+        padding: 8px 0;
+    }
+
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .content h1 {
+        font-size: 25px;
+    }
+
+    .content p {
+        font-size: 10px;
+    }
+
+    button {
+        width: 100px;
+        padding: 5px 0;
+    }
+}

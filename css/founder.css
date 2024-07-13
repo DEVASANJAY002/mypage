@@ -1,0 +1,271 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-y: scroll;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar {
+    width: 90%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    width: 300px;
+    height: 110px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.nav-links li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #daa520;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+.navbar-menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.photo-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    max-width: 50%;
+}
+
+.photo-container img {
+    border-radius: 15px;
+    border: 5px solid #444;
+    max-width: 100%;
+    height: 600px;
+}
+
+.caption {
+    flex: 2;
+    max-width: 50%;
+    margin-left: 20px;
+    text-align: left;
+    overflow: hidden;
+}
+
+.caption h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    background: -webkit-linear-gradient(90deg, #ffd700, #daa520);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.caption p {
+    margin: 10px 0;
+    line-height: 1.6;
+    text-overflow: ellipsis;
+}
+
+.description-bar {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9em;
+    width: 100%;
+    overflow: hidden;
+}
+
+.description-bar a {
+    color: #009688;
+    text-decoration: none;
+}
+
+.description-bar a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .photo-container {
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .caption {
+        max-width: 100%;
+        margin-left: 0;
+        text-align: center;
+    }
+
+    .caption h1 {
+        font-size: 2em;
+    }
+
+    .caption p {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+
+    .photo-container img {
+        height: 250px;
+    }
+
+    .caption h1 {
+        font-size: 1.5em;
+    }
+
+    .caption p {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        height:80vh;
+        background: rgba(1, 1, 1, 0.8);
+        position: fixed;
+        top: 0;
+        right: 0;
+        transition: transform 0.8s ease-in-out;
+        transform: translateX(100%);
+        padding-top: 80px;
+    }
+
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .navbar-menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .side-button {
+        margin: 20px 0;
+    }
+
+    .content h1 {
+        font-size: 30px;
+    }
+
+    .content p {
+        font-size: 12px;
+    }
+
+    button {
+        width: 120px;
+        padding: 8px 0;
+    }
+
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .content h1 {
+        font-size: 25px;
+    }
+
+    .content p {
+        font-size: 10px;
+    }
+
+    button {
+        width: 100px;
+        padding: 5px 0;
+    }
+}
+

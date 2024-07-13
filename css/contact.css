@@ -1,0 +1,279 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000;
+    color: #fff;
+    overflow-y: scroll;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    overflow-x: hidden;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.navbar {
+    width: 90%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo {
+    width: 300px;
+    height: 110px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.nav-links li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #daa520;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.nav-links li:hover::after {
+    width: 100%;
+}
+
+.navbar-menu-toggle {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+}
+
+.scroll-container {
+    flex: 1;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scroll-container::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+}
+
+.content {
+    text-align: center;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.contact-info, .contact-form {
+    width: 45%;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 15px;
+    margin: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.contact-info h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    background: -webkit-linear-gradient(90deg, #ffd700, #daa520);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-info p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #daa520;
+    text-decoration: none;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.social-media a {
+    display: block;
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background-color: #222;
+    color: #fff;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #daa520;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffd700;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1024px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .contact-form {
+        width: 90%;
+    }
+
+    .contact-info h1 {
+        font-size: 2em;
+    }
+
+    .contact-info p {
+        font-size: 1em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 10px;
+    }
+
+    .contact-info h1 {
+        font-size: 1.5em;
+    }
+
+    .contact-info p {
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        height:80vh;
+        background: rgba(1, 1, 1, 0.8);
+        position: fixed;
+        top: 0;
+        right: 0;
+        transition: transform 0.8s ease-in-out;
+        transform: translateX(100%);
+        padding-top: 80px;
+    }
+
+
+    .nav-links.active {
+        display: flex;
+        transform: translateX(0);
+    }
+
+    .navbar-menu-toggle {
+        display: block;
+        position: relative;
+        z-index: 1;
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    .side-button {
+        margin: 20px 0;
+    }
+
+    .content h1 {
+        font-size: 30px;
+    }
+
+    .content p {
+        font-size: 12px;
+    }
+
+    button {
+        width: 120px;
+        padding: 8px 0;
+    }
+
+    .logo {
+        width: 150px;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .content h1 {
+        font-size: 25px;
+    }
+
+    .content p {
+        font-size: 10px;
+    }
+
+    button {
+        width: 100px;
+        padding: 5px 0;
+    }
+}
